@@ -1,3 +1,5 @@
+#!/usr/bin/env ruby
+
 # normal useless way
 
 def fib(num)
