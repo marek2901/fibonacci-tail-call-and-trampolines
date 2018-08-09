@@ -49,6 +49,10 @@ def fib_tramp(num)
   trampoline_it(proc { inner_fib_tramp(num, 0, 1) })
 end
 
-num = ARGV.shift.to_i || 1_000_000
+num = begin
+        Integer(ARGV.shift)
+      rescue StandardError
+        1_000_000
+      end
 
 puts "fib #{num} eq #{fib_tramp(num)}"
