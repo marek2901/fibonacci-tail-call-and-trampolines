@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 const num = process.argv[2] || 10;
 
 console.log(fibonacci(num));
