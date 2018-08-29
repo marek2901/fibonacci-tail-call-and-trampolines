@@ -1,3 +1,7 @@
+const num = process.argv[2] || 10;
+
+console.log(fibonacci(num));
+
 function trampoline(fn) {
   return (...args) => {
     let result = fn(...args);
@@ -21,5 +25,3 @@ function fibonacci(count, a = 1, b = 1) {
 
   return trampoline(inner)(count, a, b);
 }
-
-console.log(fibonacci(10));
