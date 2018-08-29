@@ -1,6 +1,6 @@
 function trampoline(fn) {
-  return function () {
-    var result = fn.apply(fn, arguments);
+  return (...args) => {
+    let result = fn(...args);
     while (typeof result === 'function') {
       result = result();
     }
@@ -22,4 +22,4 @@ function fibonacci(count, a = 1, b = 1) {
   return trampoline(inner)(count, a, b);
 }
 
-console.log(fibonacci(10000));
+console.log(fibonacci(10));
