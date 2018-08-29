@@ -4,7 +4,7 @@ This project is an attempt to optimize regular stack based recursion with trampo
 
 > TRAMPOLINING is a functional programming concnept allowing to transform stack based recursion to iteration
 
-Take a look at `ruby/main.rb` or `python/main.py` for implementation details
+Take a look at `ruby/main.rb` or `python/main.py` (or `javascript/main.js` ;))  for implementation details
 
 ## Getting Started
 
@@ -12,8 +12,14 @@ Take a look at `ruby/main.rb` or `python/main.py` for implementation details
 
 ## Running
 
-run `./ruby/main.rb [num]`
-run `./python/main.py [num]`
+```
+# Ruby
+./ruby/main.rb [num]
+# Python
+./python/main.py [num]
+# Javascript
+./javascript/main.js [num]
+```
 
 ## Contributing
 
