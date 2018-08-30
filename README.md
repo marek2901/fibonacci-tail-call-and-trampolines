@@ -2,7 +2,7 @@
 
 This project is an attempt to optimize regular stack based recursion with trampolines
 
-> TRAMPOLINING is a functional programming concnept allowing to transform stack based recursion to iteration
+> TRAMPOLINING is a functional programming concept allowing to transform stack based recursion to iteration
 
 Take a look at `ruby/main.rb` or `python/main.py` (or `javascript/main.js`, even `bash/main.sh` and `c/main.c` ;))  for implementation details
 
