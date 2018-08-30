@@ -8,10 +8,10 @@ typedef enum {
 } val_type;
 
 struct result_type;
-typedef struct result_type (trampolined_fun_pointer)(int, ulli, ulli);
+typedef struct result_type (trampolined_fun)(int, ulli, ulli);
 typedef struct result_type {
   val_type type;
-  trampolined_fun_pointer *fun;
+  trampolined_fun * fun;
   int counter;
   ulli a;
   ulli b;
@@ -22,12 +22,12 @@ result_type fibo(int counter, ulli a, ulli b){
     result_type result = { VALUE, NULL, counter, a, b };
     return result;
   }
-  result_type result = { FUNCTION, &fibo, counter-1, b, a+b };
+  result_type result = { FUNCTION, fibo, counter-1, b, a+b };
   return result;
 }
 
 
-ulli trampoline(trampolined_fun_pointer fun, int counter, ulli a, ulli b){
+ulli trampoline(trampolined_fun fun, int counter, ulli a, ulli b){
   result_type result = fun(counter, a, b);
   while(result.type == FUNCTION){
     result = result.fun(result.counter, result.a, result.b);
