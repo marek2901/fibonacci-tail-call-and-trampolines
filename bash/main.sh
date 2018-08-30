@@ -4,7 +4,7 @@ fib_tramp() {
   [ $1 == 0 ] && echo $2 && return 0
   COUNTER=$((${1}-1))
   A=$3
-  B=$(echo ${2}+${3} | bc | tr -d '\\' | tr -d $'\n')
+  B=$(echo ${2}+${3} | bc | tr -d $'\n\\')
   echo "fib_tramp $COUNTER $A $B"
 }
 
